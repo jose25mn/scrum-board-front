@@ -1,0 +1,83 @@
+.card {
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 12px;
+  margin-bottom: 8px;
+  cursor: grab;
+  transition: transform var(--transition), box-shadow var(--transition), opacity var(--transition);
+  animation: cardSlideIn 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.card:active {
+  cursor: grabbing;
+}
+
+.card--dragging {
+  opacity: 0.4;
+  transform: rotate(2deg);
+}
+
+.card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 8px;
+}
+
+.card__title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-white);
+  flex: 1;
+  margin-right: 8px;
+}
+
+.card__delete {
+  background: none;
+  border: none;
+  color: var(--color-text-dim);
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0 4px;
+  line-height: 1;
+  transition: color var(--transition);
+  opacity: 0;
+}
+
+.card:hover .card__delete {
+  opacity: 1;
+}
+
+.card__delete:hover {
+  color: var(--color-error);
+}
+
+.card__description {
+  font-size: 0.8rem;
+  color: #a0a0b0;
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+.card__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card__assignee-info {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.card__assignee {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
